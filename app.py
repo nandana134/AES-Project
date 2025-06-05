@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # For flash messages
 
 # Load the pre-trained spaCy model for word embeddings
-nlp = spacy.load("en_core_web_lg")  # or en_core_web_lg for larger vectors
+nlp = spacy.load("en_core_web_sm")  # or en_core_web_lg for larger vectors
 
 # Load the pre-trained model (make sure you provide the correct path to your model)
 model = load_model('essay_grading_model.h5')
