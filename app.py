@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, flash
 import spacy
 import tensorflow as tf
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model # type: ignore
 import numpy as np
 
 app = Flask(__name__)
