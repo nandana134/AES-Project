@@ -32,8 +32,17 @@
 </head>
 <body>
     <h1>Automated Essay Scoring</h1>
-    <form method="POST">
-        <textarea name="essay" placeholder="Paste your essay here...">{{ essay }}</textarea><br>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li style="color: red;">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+    <form method="POST" action = "/predict">
+        <textarea name="essay_text" placeholder="Paste your essay here...">{{ essay }}</textarea><br>
         <input type="submit" value="Get Score">
     </form>
 
